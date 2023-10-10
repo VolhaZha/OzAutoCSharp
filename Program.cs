@@ -8,8 +8,6 @@ array[1] = 3;
 
 array2[0] = 5;
 array2[1] = 5;
-
-array3[0] = 2;
-array3[1] = 8;
+array2[2] = 5;
 
 Console.WriteLine("1:" + array[0] + " 2:" + array2[4]);
