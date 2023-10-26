@@ -1,12 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-int[] array = new int[7];
-int[] array2 = new int[7];
-int[] array3 = new int[7];
+﻿using OzTest1;
 
-array[0] = 7;
-array[1] = 3;
+Order order1 = new Order("book", 333444555, 10, "Minsk");
+Order order2 = new Order("food", 333444777, 20, "Wro");
+Order order3 = new Order("sport", 333444888, 30, "Ber");
 
-array2[0] = 5;
-array2[1] = 5;
+Order[] orderGeneral = { order1, order2, order3 };
 
-Console.WriteLine("1:" + array[0] + " 2:" + array2[4]);
+foreach (Order order in orderGeneral)
+{
+    Console.WriteLine(order);
+}
