@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OzTest1
+﻿namespace OzTest1
 {
     internal class Order
     {
-        private string name = "Name";
-        private long phone;
-        private float price;
-        private string address = "Address";
+        private string _name = "Name";
+        private long _phone;
+        private float _price;
+        private string _address = "Address";
 
-        public string Name { get { return name; } set { name = value; } }
-        public long Phone { get { return phone; } set { phone = value; } }
-        public float Price { get { return price; } set { price = value; } }
-        public string Address { get { return address; } set { address = value; } }
+        public string Name { get; set;}
+        public long Phone { get; set; }
+        public float Price { get; set; }
+        public string Address { get; set; }
 
         public Order(string name, long phone, float price, string address)
         {
