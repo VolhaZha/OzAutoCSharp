@@ -1,4 +1,3 @@
-﻿
 using OzTest1;
 
 Order order1 = new Order("book", 333444555, 10, "Minsk");
