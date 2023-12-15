@@ -2,10 +2,8 @@
 {
     internal class Order
     {
-        private string _name;
         private long _phone;
         private float _price;
-        private string _address;
 
         const long PHONE_LENGTH = 13;
         const float PRICE_LOW = 0;
