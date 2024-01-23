@@ -36,12 +36,13 @@ else
 }
 
 //Orders Arrays
-Order order1 = new Order("Whyskey", 3334445551112, 10, "Minsk");
+Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
 Order order2 = new Order("Food", 3334447772212, 20, "Wro");
 Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
 Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Ber", "alko");
 Order order5 = new DiscountOrder("Sprite", 3754448882212, 121, "Ber", 21);
 Order order6 = new OrdinaryOrder("Fanta", 3334445551112, 33, "Minsk");
+Order order7 = new OrdinaryOrder("Food", 3334445551112, 33, "Minsk");
 
 
 Order[] orderGeneral = { order1, order2, order3, order4, order5, order6 };
@@ -83,4 +84,85 @@ Console.WriteLine("\nList Of Order Items iEnumerable:");
 foreach (var order in listOrder)
 {
     Console.WriteLine($"Order: {order}");
+}
+
+//Generic List
+List<Order> orders = new List<Order>() { order1, order2, order3, order4, order5, order6, order7};
+
+//Default Sort
+orders.Sort();
+foreach (Order order in orders)
+{
+    Console.WriteLine($"Default Sort: {order}");
+}
+
+//Sort by Classes
+orders.Sort(new NameComparer());
+foreach (Order order in orders)
+{
+    Console.WriteLine($"Name Sort: {order}");
+}
+
+orders.Sort(new PriceComparer());
+foreach (Order order in orders)
+{
+    Console.WriteLine($"Price Sort: {order}");
+}
+
+orders.Sort(new AddressComparer());
+foreach (Order order in orders)
+{
+    Console.WriteLine($"Address Sort: {order}");
+}
+
+//LINQ sorting
+// Using LINQ to sort by name
+var nameSortedOrders = orders.OrderBy(order => order.Name);
+Console.WriteLine("\nName Sort using LINQ:");
+foreach (Order order in nameSortedOrders)
+{
+    Console.WriteLine($"Name Sort: {order}");
+}
+
+// Using LINQ to sort by price
+var priceSortedOrders = orders.OrderBy(order => order.Price);
+Console.WriteLine("\nPrice Sort using LINQ:");
+foreach (Order order in priceSortedOrders)
+{
+    Console.WriteLine($"Price Sort: {order}");
+}
+
+// Using LINQ to sort by address
+var addressSortedOrders = orders.OrderBy(order => order.Address, StringComparer.OrdinalIgnoreCase);
+Console.WriteLine("\nAddress Sort using LINQ:");
+foreach (Order order in addressSortedOrders)
+{
+    Console.WriteLine($"Address Sort: {order}");
+}
+
+//LINQ where select orderby
+var LinqSortedOrders = orders
+    .Where(order => order.Price <= 100)
+    .OrderBy(order => order.Name, StringComparer.OrdinalIgnoreCase)
+    .Select(order => order.Name);
+Console.WriteLine("\nGeneral Sort using LINQ:");
+foreach (var order in LinqSortedOrders)
+{
+    Console.WriteLine($"General Sort: {order}");
+}
+
+//LINQ the most frequently used
+var mostFrequentProductName = orders
+    .GroupBy(order => order.Name, StringComparer.OrdinalIgnoreCase)
+    .OrderByDescending(group => group.Count())
+    .Select(group => group.Key)
+    .FirstOrDefault();
+
+if (mostFrequentProductName != null)
+{
+    Console.WriteLine($"Most Frequent Product Name: {mostFrequentProductName}");
+}
+else
+{
+    Console.WriteLine("No orders available.");
 }

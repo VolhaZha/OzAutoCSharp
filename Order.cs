@@ -1,6 +1,6 @@
 ﻿namespace OzTest1
 {
-    internal class Order
+    internal class Order : IComparable<Order>
     {
         private long _phone;
         private float _price;
@@ -49,5 +49,12 @@
         {
             return $"Product: {Name}, Order Number: {Phone}, Price: {Price}, Destination: {Address}";
         }
+
+        public int CompareTo(Order? order)
+        {
+                if (order is null) throw new ArgumentException("Incorrect param value");
+                return Phone.CompareTo(order.Phone);
+        }
+
     }
 }
