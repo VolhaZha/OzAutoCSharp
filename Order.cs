@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OzTest1
+﻿namespace OzTest1
 {
     internal class Order : IComparable<Order>
     {
@@ -54,7 +52,7 @@ namespace OzTest1
 
         public int CompareTo(Order? order)
         {
-                if (order is null) throw new ArgumentException("Некорректное значение параметра");
+                if (order is null) throw new ArgumentException("Incorrect param value");
                 return Phone.CompareTo(order.Phone);
         }
 
