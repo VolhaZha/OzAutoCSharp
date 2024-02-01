@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class VIPOrder : Order
+    public class VIPOrder : Order
     {
         public string Description { get; set; }
 

@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class MyList<T> : IEnumerable<T>
+    public class MyList<T> : IEnumerable<T>
     {
         public ListNode<T> Head { get; set; }
         public ListNode<T> Tail { get; set; }

@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class DiscountOrder : Order
+    public class DiscountOrder : Order
     {
         public float Discount { get; set; }
 

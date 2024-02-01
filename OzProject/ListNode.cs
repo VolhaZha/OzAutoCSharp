@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class ListNode<T>
+    public class ListNode<T>
     {
         public T data;
         

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzTestProject", "OzTestProject\OzTestProject.csproj", "{23357A45-A02D-4B27-96B4-65CCEAC3753D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzProject", "OzProject\OzProject.csproj", "{EBFEC8EC-6B1C-48A9-9939-E84C37384A17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23357A45-A02D-4B27-96B4-65CCEAC3753D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23357A45-A02D-4B27-96B4-65CCEAC3753D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23357A45-A02D-4B27-96B4-65CCEAC3753D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23357A45-A02D-4B27-96B4-65CCEAC3753D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBFEC8EC-6B1C-48A9-9939-E84C37384A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBFEC8EC-6B1C-48A9-9939-E84C37384A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBFEC8EC-6B1C-48A9-9939-E84C37384A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBFEC8EC-6B1C-48A9-9939-E84C37384A17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3A00383-37C9-48B0-99AE-3BF3E483B5A7}
+	EndGlobalSection
+EndGlobal

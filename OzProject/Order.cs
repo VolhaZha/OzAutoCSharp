@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class Order : IComparable<Order>
+    public class Order : IComparable<Order>
     {
         private long _phone;
         private float _price;
