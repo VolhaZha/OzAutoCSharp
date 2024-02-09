@@ -70,7 +70,7 @@ namespace OzTestProject
             Assert.IsTrue(index == -1, "Number should not be found in the list");
         }
         [TestMethod]
-        public void ListOfOrderItemsTest()
+        public void ListOfOrderItemsOrder4Test()
         {
             MyList<Order> listOrder = new MyList<Order>();
             Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
@@ -82,9 +82,61 @@ namespace OzTestProject
             listOrder.AddToHead(new ListNode<Order>(order3));
             listOrder.AddToHead(new ListNode<Order>(order4));
             Assert.AreEqual(order4, listOrder.Head.data);
+        }
+        [TestMethod]
+        public void ListOfOrderItemsOrder3Test()
+        {
+            MyList<Order> listOrder = new MyList<Order>();
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 3334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Ber", "alko");
+            listOrder.AddToHead(new ListNode<Order>(order1));
+            listOrder.AddToHead(new ListNode<Order>(order2));
+            listOrder.AddToHead(new ListNode<Order>(order3));
+            listOrder.AddToHead(new ListNode<Order>(order4));
             Assert.AreEqual(order3, listOrder.Head.nextNode.data);
+        }
+        [TestMethod]
+        public void ListOfOrderItemsOrder2Test()
+        {
+            MyList<Order> listOrder = new MyList<Order>();
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 3334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Ber", "alko");
+            listOrder.AddToHead(new ListNode<Order>(order1));
+            listOrder.AddToHead(new ListNode<Order>(order2));
+            listOrder.AddToHead(new ListNode<Order>(order3));
+            listOrder.AddToHead(new ListNode<Order>(order4));
             Assert.AreEqual(order2, listOrder.Head.nextNode.nextNode.data);
+        }
+        [TestMethod]
+        public void ListOfOrderItemsOrder1Test()
+        {
+            MyList<Order> listOrder = new MyList<Order>();
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 3334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Ber", "alko");
+            listOrder.AddToHead(new ListNode<Order>(order1));
+            listOrder.AddToHead(new ListNode<Order>(order2));
+            listOrder.AddToHead(new ListNode<Order>(order3));
+            listOrder.AddToHead(new ListNode<Order>(order4));
             Assert.AreEqual(order1, listOrder.Head.nextNode.nextNode.nextNode.data);
+        }
+        [TestMethod]
+        public void ListOfOrderItemsNullTest()
+        {
+            MyList<Order> listOrder = new MyList<Order>();
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 3334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Ber", "alko");
+            listOrder.AddToHead(new ListNode<Order>(order1));
+            listOrder.AddToHead(new ListNode<Order>(order2));
+            listOrder.AddToHead(new ListNode<Order>(order3));
+            listOrder.AddToHead(new ListNode<Order>(order4));
             Assert.IsNull(listOrder.Head.nextNode.nextNode.nextNode.nextNode);
         }
         [TestMethod]
@@ -113,7 +165,7 @@ namespace OzTestProject
             Assert.AreEqual(order2, orders[0]);
         }
         [TestMethod]
-        public void SortByClassesTest()
+        public void SortByClassesNameTest()
         {
             Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
             Order order2 = new Order("Food", 1334447772212, 20, "Wro");
@@ -124,8 +176,31 @@ namespace OzTestProject
             List<Order> orders = new List<Order>() { order1, order2, order3, order4, order5, order6 };
             orders.Sort(new NameComparer());
             Assert.AreEqual(order6, orders[0]);
+        }
+        [TestMethod]
+        public void SortByClassesPriceTest()
+        {
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 1334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Arg", "alko");
+            Order order5 = new DiscountOrder("Sprite", 3754448882212, 121, "Ber", 21);
+            Order order6 = new OrdinaryOrder("Fanta", 3334445551112, 33, "Minsk");
+            List<Order> orders = new List<Order>() { order1, order2, order3, order4, order5, order6 };
             orders.Sort(new PriceComparer());
             Assert.AreEqual(order1, orders[0]);
+        }
+        [TestMethod]
+        public void SortByClassesAddressTest()
+        {
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 1334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Arg", "alko");
+            Order order5 = new DiscountOrder("Sprite", 3754448882212, 121, "Ber", 21);
+            Order order6 = new OrdinaryOrder("Fanta", 3334445551112, 33, "Minsk");
+            List<Order> orders = new List<Order>() { order1, order2, order3, order4, order5, order6 };
+            orders.Sort(new NameComparer());
             orders.Sort(new AddressComparer());
             Assert.AreEqual(order4, orders[0]);
         }
@@ -169,7 +244,7 @@ namespace OzTestProject
             Assert.AreEqual(order4, addressSortedOrders.First());
         }
         [TestMethod]
-        public void LINQWhereSelectOrderByTest()
+        public void LINQWhereSelectOrderBy1Test()
         {
             Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
             Order order2 = new Order("Food", 1334447772212, 20, "Wro");
@@ -181,8 +256,23 @@ namespace OzTestProject
             var LinqSortedOrders = orders
                             .Where(order => order.Price <= 100)
                             .OrderBy(order => order.Name, StringComparer.OrdinalIgnoreCase)
-                            .Select(order => order.Name); 
+                            .Select(order => order.Name);
             Assert.AreEqual(order6.Name, LinqSortedOrders.First());
+        }
+        [TestMethod]
+        public void LINQWhereSelectOrderBy2Test()
+        {
+            Order order1 = new Order("Whyskey", 4334445551112, 10, "Minsk");
+            Order order2 = new Order("Food", 1334447772212, 20, "Wro");
+            Order order3 = new Order("Sport", 3754448882212, 300, "Ber");
+            Order order4 = new VIPOrder("Martini", 3754448882212, 150, "Arg", "alko");
+            Order order5 = new DiscountOrder("Sprite", 3754448882212, 121, "Ber", 21);
+            Order order6 = new OrdinaryOrder("Fanta", 3334445551112, 33, "Minsk");
+            List<Order> orders = new List<Order>() { order1, order2, order3, order4, order5, order6 };
+            var LinqSortedOrders = orders
+                            .Where(order => order.Price <= 100)
+                            .OrderBy(order => order.Name, StringComparer.OrdinalIgnoreCase)
+                            .Select(order => order.Name);
             Assert.AreEqual(3, LinqSortedOrders.Count());
         }
         [TestMethod]

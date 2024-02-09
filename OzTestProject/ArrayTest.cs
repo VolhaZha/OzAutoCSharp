@@ -20,7 +20,7 @@ namespace OzTestProject
             Assert.AreEqual(6, orderGeneral.Length);
         }
         [TestMethod]
-        public void OrderPropertiesTest()
+        public void OrderPropertiesNameTest()
         {
             string name = "Test Product";
             long phone = 1234567890123;
@@ -30,8 +30,41 @@ namespace OzTestProject
             var order = new Order(name, phone, price, address);
 
             Assert.AreEqual(name, order.Name);
+        }
+        [TestMethod]
+        public void OrderPropertiesPhoneTest()
+        {
+            string name = "Test Product";
+            long phone = 1234567890123;
+            float price = 500.50f;
+            string address = "Test Address";
+
+            var order = new Order(name, phone, price, address);
+
             Assert.AreEqual(phone, order.Phone);
+        }
+        [TestMethod]
+        public void OrderPropertiesPriceTest()
+        {
+            string name = "Test Product";
+            long phone = 1234567890123;
+            float price = 500.50f;
+            string address = "Test Address";
+
+            var order = new Order(name, phone, price, address);
+
             Assert.AreEqual(price, order.Price);
+        }
+        [TestMethod]
+        public void OrderPropertiesAddressTest()
+        {
+            string name = "Test Product";
+            long phone = 1234567890123;
+            float price = 500.50f;
+            string address = "Test Address";
+
+            var order = new Order(name, phone, price, address);
+
             Assert.AreEqual(address, order.Address);
         }
 
