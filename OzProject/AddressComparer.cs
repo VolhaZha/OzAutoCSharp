@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class AddressComparer : IComparer<Order>
+    public class AddressComparer : IComparer<Order>
     {
         public int Compare(Order? p1, Order? p2)
         {

@@ -1,6 +1,6 @@
-﻿namespace OzTest1
+﻿namespace OzProject
 {
-    internal class OrdinaryOrder : Order
+    public class OrdinaryOrder : Order
     {
         public OrdinaryOrder(string name, long phone, float price, string address) : base(name, phone, price, address)
         {
